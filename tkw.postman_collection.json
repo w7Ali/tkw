@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "0e17721d-7c40-4766-ac91-e2967ee5c042",
+		"name": "tkw",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30077816"
+	},
+	"item": [
+		{
+			"name": "addProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"BMW\",\n    \"description\" : \"Sports Car\",\n    \"price\" : 988888\n   \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/product/add/"
+			},
+			"response": []
+		},
+		{
+			"name": "allDetail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"BMW\",\n    \"description\" : \"Sports Car\",\n    \"price\" : 988888\n   \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/product/detail/"
+			},
+			"response": []
+		},
+		{
+			"name": "ParticularProduct",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"BMW\",\n    \"description\" : \"Sports Car\",\n    \"price\" : 988888\n   \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/product/detail/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"BMW\",\n    \"description\" : \"Sports Car\",\n    \"price\" : 977822   \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/product/detail/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"BMW\",\n    \"description\" : \"Sports Car\",\n    \"price\" : 977822   \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/product/detail/2/"
+			},
+			"response": []
+		}
+	]
+}
