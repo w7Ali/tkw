@@ -101,6 +101,33 @@
 				"url": "http://127.0.0.1:8000/product/detail/2/"
 			},
 			"response": []
+		},
+		{
+			"name": "SummaryAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/product/summary/all/"
+			},
+			"response": []
+		},
+		{
+			"name": "SummaryLastDay",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/product/summary/last_day/"
+			},
+			"response": []
+		},
+		{
+			"name": "SummaryLastWeek",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/product/summary/last_week/"
+			},
+			"response": []
 		}
 	]
 }
