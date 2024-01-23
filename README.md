@@ -1,129 +1,58 @@
-<!DOCTYPE html>
-<html>
+# Product Management API Documentation
 
-<head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 40px;
-        }
+Welcome to the Product Management API documentation! This API allows you to perform various operations related to managing products, including adding new products, retrieving product details, updating product information, deleting products, and obtaining a list of top products based on retrieval counts.
 
-        h1, h2, h3, h4, h5, h6 {
-            color: #333;
-        }
+## 1. Add a New Product
 
-        h1 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
+* **Endpoint:** `/add/`
+* **Method:** `POST`
 
-        h2 {
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
+### Synopsis:
+This endpoint enables you to add a new product to the system. Send a POST request with the necessary product details, including the title, description, and price.
 
-        h3 {
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
+### Example Usage:
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{"title": "New Product", "description": "A fantastic new product", "price": 29.99}' http://your-api-url/add/
+# 2. Retrieve All Products
 
-        p {
-            margin-bottom: 20px;
-        }
+* **Endpoint:** `/detail/`
+* **Method:** `GET`
 
-        code {
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
-            padding: 5px;
-            font-family: "Courier New", Courier, monospace;
-        }
+### Synopsis:
+Use this endpoint to retrieve details about all products currently available in the system.
 
-        pre {
-            background-color: #f4f4f4;
-            border: 1px solid #ddd;
-            padding: 10px;
-            overflow: auto;
-            font-family: "Courier New", Courier, monospace;
-        }
-    </style>
-</head>
+### Example Usage:
+```bash
+curl http://your-api-url/detail/
 
-<body>
+### 3. Retrieve or Update a Specific Product
 
-    <h1>Product Management API Documentation</h1>
+```markdown
+# 3. Retrieve or Update a Specific Product
 
-    <p>Welcome to the Product Management API documentation! This API allows you to perform various operations related to managing products, including adding new products, retrieving product details, updating product information, deleting products, and obtaining a list of top products based on retrieval counts.</p>
+* **Endpoint:** `/detail/{product_id}/`
+* **Methods:** `GET`, `PUT`, `DELETE`
 
-    <h2>1. Add a New Product</h2>
+### Synopsis:
+This endpoint allows you to retrieve, update, or delete details for a specific product. Send a GET request to view details, a PUT request to update information, or a DELETE request to remove the product.
 
-    <strong>Endpoint:</strong> <code>/add_product/</code><br>
-    <strong>Method:</strong> <code>POST</code>
+### Example Usage:
 
-    <h3>Synopsis:</h3>
-    <p>This endpoint enables you to add a new product to the system. Send a POST request with the necessary product details, including the title, description, and price.</p>
+- **Retrieve Product Details:**
+  ```bash
+  curl http://your-api-url/detail/{product_id}/
 
-    <h3>Example Usage:</h3>
-    <pre>
-curl -X POST -H "Content-Type: application/json" -d '{"title": "New Product", "description": "A fantastic new product", "price": 29.99}' http://your-api-url/add_product/
-    </pre>
+### 4. Retrieve Top Products
 
-    <h2>2. Retrieve All Products</h2>
+```markdown
+# 4. Retrieve Top Products
 
-    <strong>Endpoint:</strong> <code>/all_product/</code><br>
-    <strong>Method:</strong> <code>GET</code>
+* **Endpoint:** `/summary/{period}/`
+* **Method:** `GET`
 
-    <h3>Synopsis:</h3>
-    <p>Use this endpoint to retrieve details about all products currently available in the system.</p>
+### Synopsis:
+Get a list of the top 5 products based on retrieval counts. You can specify the period as 'all', 'last_day', or 'last_week' to view top products for different time frames.
 
-    <h3>Example Usage:</h3>
-    <pre>
-curl http://your-api-url/all_product/
-    </pre>
-
-    <h2>3. Retrieve or Update a Specific Product</h2>
-
-    <strong>Endpoint:</strong> <code>/product_detail/{product_id}/</code><br>
-    <strong>Methods:</strong> <code>GET</code>, <code>PUT</code>, <code>DELETE</code>
-
-    <h3>Synopsis:</h3>
-    <p>This endpoint allows you to retrieve, update, or delete details for a specific product. Send a GET request to view details, a PUT request to update information, or a DELETE request to remove the product.</p>
-
-    <h3>Example Usage:</h3>
-    <ul>
-        <li>Retrieve Product Details:
-            <pre>
-curl http://your-api-url/product_detail/1/
-            </pre>
-        </li>
-        <li>Update Product Information:
-            <pre>
-curl -X PUT -H "Content-Type: application/json" -d '{"title": "Updated Product", "description": "An improved version", "price": 39.99}' http://your-api-url/product_detail/1/
-            </pre>
-        </li>
-        <li>Delete a Product:
-            <pre>
-curl -X DELETE http://your-api-url/product_detail/1/
-            </pre>
-        </li>
-    </ul>
-
-    <h2>4. Retrieve Top Products</h2>
-
-    <strong>Endpoint:</strong> <code>/top_products/{period}/</code><br>
-    <strong>Method:</strong> <code>GET</code>
-
-    <h3>Synopsis:</h3>
-    <p>Get a list of the top 5 products based on retrieval counts. You can specify the period as 'all', 'last_day', or 'last_week' to view top products for different time frames.</p>
-
-    <h3>Example Usage:</h3>
-    <pre>
-curl http://your-api-url/top_products/last_week/
-    </pre>
-
-    <p>That's it! Feel free to explore and interact with the API using the provided endpoints. If you have any questions or issues, please refer to the API documentation or contact our support team. Happy managing your products!</p>
-
-</body>
-
-</html>
+### Example Usage:
+```bash
+curl http://your-api-url/summary/{period}/
