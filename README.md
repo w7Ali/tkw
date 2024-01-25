@@ -12,7 +12,7 @@ This endpoint enables you to add a new product to the system. Send a POST reques
 
 ### Example Usage:
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"title": "New Product", "description": "A fantastic new product", "price": 29.99}' http://your-api-url/add/
+curl -X POST -H "Content-Type: application/json" -d '{"title": "New Product", "description": "A fantastic new product", "price": 29.99}' http://w7ali.pythonanywhere.com/product/add/
 # 2. Retrieve All Products
 
 * **Endpoint:** `/detail/`
@@ -23,7 +23,7 @@ Use this endpoint to retrieve details about all products currently available in 
 
 ### Example Usage:
 ```bash
-curl http://your-api-url/detail/
+curl http://w7ali.pythonanywhere.com/product/detail/summary/
 
 ### 3. Retrieve or Update a Specific Product
 
@@ -40,7 +40,7 @@ This endpoint allows you to retrieve, update, or delete details for a specific p
 
 - **Retrieve Product Details:**
   ```bash
-  curl http://your-api-url/detail/{product_id}/
+  curlhttp://w7ali.pythonanywhere.com/product/detail/{product_id}/
 
 ### 4. Retrieve Top Products
 
@@ -55,4 +55,4 @@ Get a list of the top 5 products based on retrieval counts. You can specify the 
 
 ### Example Usage:
 ```bash
-curl http://your-api-url/summary/{period}/
+curl http://w7ali.pythonanywhere.com/product/summary/{period}/
